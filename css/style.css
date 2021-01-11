@@ -230,9 +230,11 @@ header .menu a:nth-child(odd){
 }
 .album .album-item{
     width: 50%;
-    height: 50vw;
     background-color: #bccc8c;
     float: left;
+}
+.album .album-title{
+    height: 49vw;
 }
 .album .album-item img{
     width: 100%;
@@ -719,21 +721,23 @@ header .menu a:nth-child(odd){
 
 /* album */
 .album{
-    padding: 0 10vw;
+    padding: 0 9.5vw;
     background-color: #aaa;
     margin-bottom: 20vh;
 }
 .album .album-item{
     width: 25%;
-    height: 20vw;
+    /* height: 20vw; */
     float: left;
+}
+.album .album-title{
+    height: 19.5vw;
 }
 .album .album-item:nth-child(3),.album .album-item:nth-child(4){
     width: 50%;
-    height: 40vw;
 }
 .album .album-item:nth-child(4){
-    margin-top: -20vw;
+    margin-top: -25%;
 }
 
 /* library */
