@@ -132,6 +132,11 @@ header .menu a{
     color: #eee;
     box-sizing: border-box;
     border-bottom: 1px solid #eee;
+    transition: .5s;
+}
+header .menu a:hover{
+    transform: translateY(-2px);
+    text-decoration: underline;
 }
 header .menu a:nth-child(odd){
     border-right: 1px solid #eee;
@@ -391,7 +396,8 @@ header .menu a:nth-child(odd){
     margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: centers;
+    align-items: center;
+    /* outline: 1px solid red; */
 }
 .other .item{
     width: 80vmin;
@@ -589,7 +595,7 @@ header .menu::before{
 /* banner */
 .banner .banner-txt{
     width: 80vmin;
-    border-radius: 5px 300px 5px 300px;
+    border-radius: 5px 200px 5px 200px;
 }
 /* library */
 .library .container{
@@ -626,19 +632,13 @@ header .menu::before{
 }
 
 /* other */
-.other .container{
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
 .other .item{
-    width: 37.5vmin;
-    margin-right: 10%;
+    width: 50%;
     margin-bottom: 2em;
 }
 .other .item .title, .other .item .info{
     width: 50%;
-    height: 20vmin;
+    height: 20vw;
 }
 
 /* footer */
@@ -747,13 +747,18 @@ header .menu a:nth-child(odd){
 }
 
 /* other */
+.other .container{
+    flex-direction: row;
+    justify-content: space-between;
+}
 .other .item{
-    width: 32vmin;
+    width: 30%;
     margin-bottom: 2em;
+    /* outline: 1px solid red; */
 }
 .other .item .title, .other .item .info{
     width: 50%;
-    height: 16vmin;
+    height: 12vw;
 }
 
 /* 報名 */
