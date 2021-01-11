@@ -237,6 +237,11 @@ header .menu a:nth-child(odd){
     width: 50%;
     background-color: #bccc8c;
     float: left;
+    overflow: hidden;
+    
+}
+.album .album-item:hover img{
+    transform: scale(1.05);
 }
 .album .album-title{
     height: 49vw;
@@ -244,13 +249,14 @@ header .menu a:nth-child(odd){
 .album .album-item img{
     width: 100%;
     vertical-align: middle;
+    transition: 1s;
 }
 .album .album-title{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    
 }
 .album::after{
     content: '';
@@ -302,7 +308,6 @@ header .menu a:nth-child(odd){
     color: #333;
     font-size: 0.9em;
     padding: 2em 0;
-    text-align: center;
 }
 .library .info .tips{
     display: flex;
