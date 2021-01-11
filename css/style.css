@@ -1,0 +1,786 @@
+@font-face {
+    font-family: melle;
+    src: url('../webfonts/melle.ttf');
+  }
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+input:focus{
+    outline: none;
+}
+body{
+    background-color: #F6ECF4;
+}
+h2{
+    font-size: 3em;
+    color: #bccc8c;
+    text-shadow: 3px 3px 0 #fff;
+    position: relative;
+    /* outline: 1px solid black; */
+    text-align: center;
+    margin-bottom: 5vh;
+}
+h2::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    margin: auto;
+    width: 1.2em;
+    height: .7em;
+    background-color: #748FB1;
+    border-radius: 30px 2px 30px 2px;
+    z-index: -1;
+}
+
+/* 方框文字 */
+.other .item .title::before,.album .album-title::before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    transform: scale(.72) rotate(-30deg);
+    opacity: .5;
+}
+.other .item .title h3,.album .album-title h3{
+    color: #eee;
+    font-weight: 500;
+    letter-spacing: .15em;
+    font-size: 2em;
+    width: 2.3em;
+    line-height: 1.2;
+}
+
+
+/* 選單列 */
+header .search-bar input, header .search-bar button{
+    background-color: transparent;
+    border: none;
+}
+header{
+    position: fixed;
+    top: 2em;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+}
+header .search-bar{
+    position: relative;
+    display: inline-block;
+    /* display: flex; */
+    margin-left: auto;
+    padding: .2em .5em;
+}
+header .search-bar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(255,255,255,.8);   
+    z-index: -1;
+    border-radius: 5px;
+}
+header .search-bar .fa-search{
+    color: #777;
+}
+header .fa-bars{
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 .2em;
+}
+header .menu{
+    display: none;
+}
+header .menu.show{
+    position: absolute;
+    top: 3em;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+header .menu::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: .5em solid transparent;
+    border-right: .5em solid transparent;
+    border-bottom: 1em solid #E6CBE0;
+    right: .5em;
+    top: -1em;
+}
+header .menu a{
+    width: 50%;
+    line-height: 3;
+    text-align: center;
+    background-color: #E6CBE0;
+    font-size: 1em;
+    color: #eee;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+}
+header .menu a:nth-child(odd){
+    border-right: 1px solid #eee;
+}
+
+
+/* banner */
+.banner .kv{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../pic/kv.jpg);
+    background-repeat: no-repeat;
+    background-position: -20vw -5%;
+    background-size: 115%;
+}
+.banner .kv img{
+    width: 100%;
+}
+.banner .banner-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vmin;
+    background-color: #fff;
+    text-align: center;
+    padding: 6vh 0;
+    border-radius: 5px 150px 5px 150px;
+}
+.banner .banner-txt h1{
+    color: transparent;
+    font-size: 60px;
+    font-family: melle;
+    font-weight: 100;
+    background: url(../pic/h1bg.png) center center/ 100% 120%;
+    -webkit-background-clip: text;
+}
+.banner .banner-txt h5{
+    color: #333;
+    font-weight: 100;
+    font-size: 1.4em;
+    margin-top: .5em;
+    line-height: 1.5;
+}
+.banner .banner-txt a{
+    display: inline-block;
+    color: #BCCC8C;
+    font-size: 1.8em;
+    font-weight: 700;
+    padding: .2em 1em;
+    margin-top: 1em;
+    background-color: #fff;
+    border: 1px solid #bccc8c;
+    border-radius: 50px;
+}
+.banner .banner-txt a:hover{
+    color: #fff;
+    background-color: #bccc8c;
+    border: 1px solid #fff;
+}
+
+/* intro */
+.intro{
+    padding: 5vh 0;
+}
+.intro .container{
+    width: 80vmin;
+    padding: 3em 2em;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #748FB1;
+    text-align: center;
+    border-radius: 150px 5px 150px 5px;
+    position: relative;
+}
+.intro h2{
+    font-size: 3.5em;
+    color: #bccc8c;
+    text-shadow: 3px 3px 0 #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-60%);
+}
+.intro h2::after{
+    display: none;
+}
+.intro  p{
+    color: #fff;
+}
+
+/* album */
+.album{
+    padding: 5vh 0;
+}
+.album .album-item{
+    width: 50%;
+    height: 50vw;
+    background-color: #bccc8c;
+    float: left;
+}
+.album .album-item img{
+    width: 100%;
+    vertical-align: middle;
+}
+.album .album-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.album::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* library */
+.library{
+    padding: 5vh 0;
+}
+.library .container{
+    position: relative;
+    background-color: #fff;
+    margin: 10vmax auto;
+    padding: 5vmax;
+}
+.library input{
+    transform: scale(0);
+    opacity: 0;
+}
+.library .label-group{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+}
+.library .label-group label{
+    width: 20%;
+    opacity: .5;
+}
+.library .label-group label img{
+    width: 100%;
+}
+.library .txt .info{
+    display: none;
+}
+.library .info h3{
+    color: #BCCC8C;
+    font-size: 1.2em;
+}
+.library .info > p{
+    color: #333;
+    font-size: 0.9em;
+    padding: 2em 0;
+    text-align: center;
+}
+.library .info .tips{
+    display: flex;
+    justify-content: flex-start;
+}
+.library .info .tips div{
+    text-align: center;
+    margin-right: 5vw;
+}
+.library .info .tips h5{
+    color: #748FB1;
+    font-size: 1em;
+    font-weight: 900;
+    line-height: 2.5;
+}
+.library .info .tips p{
+    color: #333;
+    line-height: 1;
+}
+.library #spiderplant:checked ~ .txt > .info-spiderplant,
+.library #pothos:checked ~ .txt > .info-pothos,
+.library #englishivy:checked ~ .txt > .info-englishivy,
+.library #dracaena:checked ~ .txt > .info-dracaena{
+    display: block;
+}
+.library #spiderplant:checked ~ .label-group > label[ for="spiderplant"],
+.library #pothos:checked ~ .label-group > label[ for="pothos"],
+.library #englishivy:checked ~ .label-group > label[ for="englishivy"],
+.library #dracaena:checked ~ .label-group > label[ for="dracaena"]{
+    opacity: 1;
+    transition: .5s;
+}
+
+/* teacher */
+.teacher{
+    padding: 5vh 0;
+}
+.teacher .container{
+    width: 80%;
+    margin: auto;
+}
+.teacher .container .item{
+    background-color: #fff;
+    margin: 10vmax auto;
+    padding-bottom: 2em;
+    position: relative;
+    border-radius: 5px 150px 5px 150px;
+}
+.teacher .container .item .icon{
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 20%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+}
+.teacher .container .item .icon img{
+    width: 100%;
+}
+.teacher .container .item .txt{
+    text-align: center;
+    padding: 10vh 5vh 6vh;
+}
+.teacher .container .item .txt h3{
+    color: #748FB1;
+    line-height: 2;
+}
+.teacher .container .item .txt p{
+    color: #333;
+}
+.teacher .container .item .social-group{
+    width: 35%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.teacher .container .item .social-group a{
+    height: 1.5em;
+}
+.teacher .container .item .social-group a img{
+    height: 100%;
+}
+
+/* other */
+.other .container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: centers;
+}
+.other .item{
+    width: 80vmin;
+    margin-bottom: 2em;
+}
+.other .item .pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+.other .item .title, .other .item .info{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 40vw;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+.other .item .title{
+    color: #fff;
+    background-color: #DDCCDA;
+    align-items: center;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.other .item .info{
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1em;
+}
+.other .item .info::after{
+    content: '';
+    display: block;
+    clear: both; 
+}
+.other .item .info li{
+    color: #333;
+    line-height: 1.5;
+}
+.other .item .info li:first-child{
+    color: #fff;
+    background-color: #748FB1;
+    padding: 0 1em;
+    border-radius: 50px;
+    margin-bottom: .5em;
+}
+.other .item .info li i{
+    color: #aaa;
+    padding-right:.5em;
+}
+
+
+/* footer */
+footer{
+    background-image: linear-gradient(230deg, #748FB1, #576C87);
+    color: #eee;
+    padding: 8vh 0;
+    position: relative;
+}
+footer .container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+footer .item{
+    border: 1px solid rgba(238,238,238,.5);
+    border-radius: 5% 35% 5% 35%;
+    padding: .6em;
+}
+footer h3{
+    font-weight: 500;
+    letter-spacing: .15em;
+    font-size: 1em;
+    width: 2.3em;
+    line-height: 1.2;
+}
+footer :nth-child(3) h3{
+    line-height: 2;
+}
+.copyright{
+    position: absolute;
+    bottom: .8em;
+    right: 0;
+    left: 0;
+    /* outline: 1px solid red; */
+}
+.copyright p{
+    text-align: center;
+}
+
+
+/* 報名表單 */
+body.signup-body{
+    background: url(../pic/signup-bg.png),linear-gradient( #F6ECF4 50%, #bccc8c 50%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    /* background-attachment: fixed; */
+}
+.signup .container{
+    width: 80vw;
+    margin: 20vmin auto;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,.8);
+    text-align: left;
+    padding: 6vh 10%;
+    border-radius: 5px 150px 5px 150px;
+    backdrop-filter: blur(5px);
+}
+.signup .container h1{
+    color: transparent;
+    font-size: 2em;
+    font-family: melle;
+    font-weight: 100;
+    background: url(../pic/h1bg.png) center center/ 100% 120%;
+    -webkit-background-clip: text;
+    text-align: center;
+    /* outline: 1px solid red; */
+}
+.signup .container form{
+    display: flex;
+    flex-direction: column;
+}
+.signup .container form input,.signup .container form select{
+    width: 100%;
+    height: 4vmax;
+    margin: 1em 0;
+    background-color: transparent;
+    border: 1px solid #748FB1;
+    border-radius: 5px;
+    color: #748FB1;
+}
+.signup .container form input{
+    box-sizing: border-box;
+}
+.signup .container form select{
+    padding-left: 1em;
+    appearance:none;
+    background: url(../pic/select-arrow.png) 95% center/ auto 60% no-repeat;
+}
+.signup .container form input[type='checkbox']{
+    width: unset;
+    height: unset;
+}
+.signup .coupon span{
+    color: #748FB1;
+}
+.signup .container form input::-webkit-input-placeholder{
+    color:  #748FB1;
+    padding-left: 1em;
+}
+.signup button{
+    display: block;
+    color: #BCCC8C;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: .1em;
+    width: 60%;
+    margin-top: 1em;
+    margin-left: auto;
+    background-color: #fff;
+    border: 1px solid #bccc8c;
+    border-radius: 50px;
+}
+
+
+/* ipad + 手機橫向版 */
+@media screen and (min-width:768px){
+
+/* 方框文字 */
+.other .item .title h3{
+    font-size: 2em;
+}
+.album .album-title h3{
+    font-size: 4em;
+}
+
+/* 選單列 */
+header .fa-bars{
+    font-size: 2em;
+    margin: 0 .5em;
+}
+header .search-bar::after{
+    width: 80%;
+}
+header .menu a{
+    font-size: 1.5em;
+    line-height: 3;
+}
+header .menu::before{
+    right: 1.5em;
+}
+/* banner */
+.banner .banner-txt{
+    width: 80vmin;
+    border-radius: 5px 300px 5px 300px;
+}
+/* library */
+.library .container{
+    padding: 8vmax 10vmax;
+}
+.library .label-group label{
+    width: 15%;
+    opacity: .5;
+}
+.library .info h3{
+    font-size: 1.5em;
+}
+.library .info > p{
+    font-size: 1em;
+}
+.library .info .tips h5{
+    font-size: 1.2em;
+}
+
+/* teacher */
+.teacher .container{
+    display: flex;
+    justify-content: space-between;
+}
+.teacher .container .item{
+    width: 45%;
+}
+.teacher .container .item .icon{
+    width: 15vmin;
+    height: 15vmin;
+}
+.teacher .container .item .txt{
+    padding: 8vh 20% 5vh;
+}
+
+/* other */
+.other .container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.other .item{
+    width: 37.5vmin;
+    margin-right: 10%;
+    margin-bottom: 2em;
+}
+.other .item .title, .other .item .info{
+    width: 50%;
+    height: 20vmin;
+}
+
+/* footer */
+footer .container{
+    justify-content: center;
+}
+footer .item{
+    width: 8vh;
+    height: 8vh;
+    padding: 0;
+    margin: 0 1em;
+    position: relative;
+}
+footer h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+}
+
+/* 桌機版本 */
+@media screen and (min-width:1200px){
+
+/* 選單列 */
+
+header{
+    padding: 0 10vw;
+    top: 0;
+    flex-direction: row-reverse;
+    /* justify-content: center; */
+    align-items: center;
+    z-index: 10;
+    background-color: #E6CBE0;
+}
+header .search-bar{
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    padding: .2em .5em;
+}
+header .search-bar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(255,255,255,.8);   
+    z-index: -1;
+    border-radius: 5px;
+}
+header .fa-bars{
+    display: none;
+}
+header .menu{
+    display: block;
+}
+header .menu::before{
+    display: none;
+}
+header .menu a{
+    display: inline-block;
+    width: unset;
+    padding: 0 2em;
+    background-color: transparent;
+    font-size: 1em;
+    border: none;
+}
+header .menu a:nth-child(odd){
+    border: none;
+}
+
+
+/* intro */
+.intro{
+    margin: 30vh auto;
+}
+
+/* album */
+.album{
+    padding: 0 10vw;
+    background-color: #aaa;
+    margin-bottom: 20vh;
+}
+.album .album-item{
+    width: 25%;
+    height: 20vw;
+    float: left;
+}
+.album .album-item:nth-child(3),.album .album-item:nth-child(4){
+    width: 50%;
+    height: 40vw;
+}
+.album .album-item:nth-child(4){
+    margin-top: -20vw;
+}
+
+/* library */
+.library .container{
+    width: 80vw;
+    box-sizing: border-box;
+}
+
+/* other */
+.other .item{
+    width: 32vmin;
+    margin-bottom: 2em;
+}
+.other .item .title, .other .item .info{
+    width: 50%;
+    height: 16vmin;
+}
+
+/* 報名 */
+.signup .container h1{
+    font-size: 4em;
+}
+.signup .container form{
+    display: block;
+    column-count: 2;
+    /* outline: 1px solid red; */
+    position: relative;
+    margin: 5vh 0;
+}
+.signup form .coupon{
+    position: absolute;
+    bottom: -2em;
+}
+.signup button{
+    width: 15%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
