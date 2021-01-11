@@ -136,7 +136,7 @@ header .menu a{
 }
 header .menu a:hover{
     transform: translateY(-2px);
-    text-decoration: underline;
+    background-color: rgba(246,236,244,.1);
 }
 header .menu a:nth-child(odd){
     border-right: 1px solid #eee;
@@ -192,6 +192,7 @@ header .menu a:nth-child(odd){
     background-color: #fff;
     border: 1px solid #bccc8c;
     border-radius: 50px;
+    transition: .5s;
 }
 .banner .banner-txt a:hover{
     color: #fff;
@@ -238,7 +239,6 @@ header .menu a:nth-child(odd){
     background-color: #bccc8c;
     float: left;
     overflow: hidden;
-    
 }
 .album .album-item:hover img{
     transform: scale(1.05);
@@ -568,6 +568,12 @@ body.signup-body{
     background-color: #fff;
     border: 1px solid #bccc8c;
     border-radius: 50px;
+    transition: .5s;
+}
+.signup button:hover{
+    color: #fff;
+    background-color: #bccc8c;
+    border: 1px solid #fff;
 }
 
 
